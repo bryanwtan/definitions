@@ -99,7 +99,8 @@ class color:
 def print_definitions(entry):
     """Pretty print an definitions to the console.""" 
     print("")
-    print(color.BOLD + entry["definitions"] + " " + entry["expansion"] + color.END)
+    print(color.BOLD + entry["definitions"])
+    print(entry["expansion"] + color.END)
     if "description" in entry:
         wrapper = textwrap.TextWrapper(initial_indent=" " * 4, width=100,
                                        subsequent_indent=" " * 4)

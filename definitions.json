@@ -29,5 +29,12 @@
     "example": "fmap (fmap (2*)) [Just 1, Just 2, Just 3, Nothing]",
     "result": "[Just 2, Just 4, Just 6, Nothing]",
     "description": "take a normal function, promote it to work for a functor f. will work with any type constructor with Functor instance."
+  },
+  {
+    "definitions": "functor",
+    "expansion": "class Functor f where",
+    "example": "map :: (a -> b) -> f a -> f b",
+    "result": "^ example operation that follows the Functor type class declaration, as it applies to lists.",
+    "description": "^ this type class declaration will have operations that follow. a functor will apply a function to a value inside a structure. leave the structure alone"
   }
 ]
