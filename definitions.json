@@ -1,0 +1,33 @@
+[
+  {
+    "definitions": "pure",
+    "expansion": ":: a -> f a",
+    "description": "take an ordinary value or function and put it into a context. useful when you don't know the specific Applicative. return == pure.",
+    "example": "pure 6 :: Maybe Int",
+    "result": "Just 6"
+  },
+  {
+    "definitions": ".",
+    "expansion": ":: (b -> c) -> (a -> b) -> a -> c",
+    "description": "chain a function, without specifying arguments composes left side function with right side function"
+  },
+  {
+    "definitions": "$",
+    "expansion": ":: (a -> b) -> a -> b",
+    "description": "associate to the right, avoid parenthesis. calls left side function with right side value as argument"
+  },
+  {
+    "definitions": "zipWith",
+    "expansion": ":: (a -> b -> c) -> [a] -> [b] -> [c]",
+    "description": "apply the fn to elements in the lists pairwise.",
+    "example": "zipWith (+) [1, 2, 3] [4, 5, 6]",
+    "result": "[5, 7, 9]"
+  },
+  {
+    "definitions": "fmap",
+    "expansion": ":: Functor f => (a -> b) -> f a -> f b",
+    "example": "fmap (fmap (2*)) [Just 1, Just 2, Just 3, Nothing]",
+    "result": "[Just 2, Just 4, Just 6, Nothing]",
+    "description": "take a normal function, promote it to work for a functor f. will work with any type constructor with Functor instance."
+  }
+]
